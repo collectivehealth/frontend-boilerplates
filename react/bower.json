@@ -1,0 +1,23 @@
+{
+  "name": "frontend-interview",
+  "description": "Frontend interview repo for Collective Health",
+  "main": "index.js",
+  "authors": [
+    "Andy McCoy <andy@collectivehealth.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/collectivehealth/frontend-interview",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.1",
+    "bootstrap": "~3.3.6"
+  }
+}

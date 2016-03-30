@@ -1,0 +1,39 @@
+/*
+ * Boilerplate Styling
+ */
+
+html,
+body {
+  height: 100%;
+}
+
+.header {
+  box-shadow: 0px 2px 4px 0px #C9CACC;
+  padding: 20px 40px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.main {
+  min-height: calc(100% - 70px); /* height of header */
+  padding: 60px 0px; /* 60px = height of footer */
+}
+
+.footer {
+  background-color: #252525;
+  color: #FFFFFF;
+  font-weight: 200;
+  padding: 20px 40px;
+  position: relative;
+  top: -60px; /* height of footer */
+}
+
+
+
+/*
+ *
+ * Add Your Styling below:
+ *
+ */
