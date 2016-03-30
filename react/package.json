@@ -14,7 +14,6 @@
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^3.2.2",
-    "gulp-open": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
