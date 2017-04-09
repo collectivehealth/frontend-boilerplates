@@ -1,0 +1,16 @@
+{
+  "name": "frontend-interview",
+  "version": "1.0.0",
+  "description": "Frontend interview repo for Collective Health",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collectivehealth/frontend-interview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/collectivehealth/frontend-interview#readme"
+}
