@@ -1,4 +1,4 @@
-###Basic Backbone JS boilerplate to be used for interviews.
+### Basic Backbone JS boilerplate to be used for interviews.
 
 This is a very simple blank HTML/CSS/JS boilerplate with JQuery, Underscore and Bootstrap support
 
