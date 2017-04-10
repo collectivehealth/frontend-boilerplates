@@ -1,8 +1,8 @@
-###Basic Vanilla JS boilerplate to be used for interviews.
+# Basic Vanilla JS boilerplate to be used for interviews.
 
-This is a very simple blank HTML/CSS/JS boilerplate with JQuery and Bootstrap support
+This is a very simple blank HTML/CSS/JS boilerplate with jQuery.
 
-#### Quick Start
+## Quick Start
 
 * run ```npm install``` to install gulp and bower dependencies
 * run ```npm start``` to launch the web server
