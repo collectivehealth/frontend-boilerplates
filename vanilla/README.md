@@ -1,6 +1,6 @@
-###Basic Vanilla JS boilerplate to be used for interviews.
+###Basic angular boilerplate to be used for interviews.
 
-This is a very simple blank HTML/CSS/JS boilerplate with JQuery and Bootstrap support
+This app includes JQuery and UI-Router support.
 
 #### Quick Start
 
