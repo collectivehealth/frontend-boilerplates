@@ -1,0 +1,49 @@
+/*
+ * Boilerplate Styling
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.App {
+  display: flex;
+  margin: 0;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.App__header {
+  box-shadow: 0px 2px 4px 0px #C9CACC;
+  padding: 20px 40px;
+}
+
+.App__logo {
+  background-image: url('assets/ch_logo.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 31px;
+  width: 32px;
+}
+
+.App__main {
+  flex: 1;
+}
+
+.App__footer {
+  background-color: #252525;
+  color: #FFFFFF;
+  font-weight: 200;
+  padding: 20px 40px;
+}
+
+
+
+/*
+ *
+ * Add Your Styling below:
+ *
+ */
