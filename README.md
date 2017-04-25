@@ -13,7 +13,7 @@ Each boilerplate supports es2015 (including modules), SCSS, livereloading, etc..
 ## Quick Start
 * create a branch for your canidate. `git checkout -b firstName-lastName`.
 * switch to the folder of the framework of your choice
-* run `npm install` to install gulp and bower dependencies
+* run `npm install` to install the boilerplate toolchain dependencies
 * run `npm start` to launch the web server
 * Access the boilerplate app at [http://localhost:8080](http://localhost:8080)
 * commit the canidates work. `git add . && git commit`.
