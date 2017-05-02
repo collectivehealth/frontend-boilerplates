@@ -7,7 +7,10 @@ import './home.scss';
 function HomeCtrl() {
   const Home = this;
 
-  Home.target = 'World';
+  Home.$onInit = () => {
+    Home.target = 'World';
+  };
+
 }
 
 // define component
