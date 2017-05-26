@@ -4,27 +4,9 @@ const packageJson = require('./package.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
-/**
- * Map array of possible env flags into an object so we can "if (env.foo) { }".
- * This can be removed when upgrading to Webpack 2.
- *
- * @example
- *
- * {
- *   local: true,
- *   dist: false
- * }
- */
-const ENV = ['local', 'dist', 'test', 'stats'].reduce((obj, env) => {
-  return Object.assign(obj, {
-    [env]: process.argv.indexOf('--env.' + env) > -1
-  });
-}, {});
-
 const CONTEXT = path.resolve(__dirname, 'src');
-const MODULE_NAME = packageJson.name;
 
-module.exports = (env => {
+module.exports = () => {
   const config = {};
 
   config.context = CONTEXT;
@@ -130,4 +112,4 @@ module.exports = (env => {
   };
 
   return config;
-})(ENV);
+};
