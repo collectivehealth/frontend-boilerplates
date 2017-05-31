@@ -1,4 +1,4 @@
-import backbone from 'backbone';
+import Backbone from 'backbone';
 import HelloModel from 'app/models/helloModel';
 import './appView.scss';
 
