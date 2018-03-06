@@ -1,6 +1,1 @@
-env:
-  jasmine: true
-plugins:
-  - react
-extends:
-  - plugin:react/recommended
+extends: react-app
