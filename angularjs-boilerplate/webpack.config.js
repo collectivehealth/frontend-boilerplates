@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const packageJson = require('./package.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const CONTEXT = path.resolve(__dirname, 'src');
 const MODULE_NAME = packageJson.name;
@@ -12,17 +12,28 @@ module.exports = () => {
 
   config.context = CONTEXT;
 
-  config.entry = {
-    app: path.resolve(CONTEXT, 'index.js'),
-    vendor: Object.keys(packageJson.dependencies)
-  }
+  config.optimization = {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          name: 'vendor',
+          test: /node_modules/,
+          enforce: true
+        },
+      }
+    },
+    runtimeChunk: true
+  };
+
+  config.entry = path.resolve(CONTEXT, 'index.js');
 
   // Configure output.
   config.output = {
     // Output directory.
     path: path.resolve(__dirname, 'dist'),
     // Output each file using the bundle name and a content-based hash.
-    filename: '[name]-[chunkhash].js',
+    filename: '[name]-[contenthash].js',
     sourceMapFilename: '[file].map',
     publicPath: '/'
   };
@@ -31,7 +42,6 @@ module.exports = () => {
     modules: [
       // Search for modules relative to source root.
       path.resolve(CONTEXT),
-      path.resolve('./tests'),
       // Search for NPM modules.
       'node_modules'
     ]
@@ -58,7 +68,11 @@ module.exports = () => {
   // Sass: Compile, add PostCSS transforms, emit to ExtractText.
   config.module.rules.push({
     test: /\.(c|sc|sa)ss$/,
-    use: ExtractTextWebpackPlugin.extract(['css-loader?sourceMap', 'sass-loader?sourceMap'])
+    use: [
+      MiniCssExtractPlugin.loader,
+      'css-loader?sourceMap',
+      'sass-loader?sourceMap'
+    ]
   });
 
   // Static assets: Inline anything under 10k, otherwise emit a file in the
@@ -72,10 +86,7 @@ module.exports = () => {
     test: /\.js$/,
     exclude: /(node_modules)/,
     use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['env']
-      }
+      loader: 'babel-loader'
     }
   })
 
@@ -85,11 +96,7 @@ module.exports = () => {
 
   config.plugins = [];
 
-  config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor'
-  }));
-
-   // Configure source map plugin.
+  // Configure source map plugin.
   config.plugins.push(new webpack.SourceMapDevToolPlugin({
     filename: '[file].map'
   }));
@@ -100,7 +107,10 @@ module.exports = () => {
     chunksSortMode: 'dependency'
   }));
 
-  config.plugins.push(new ExtractTextWebpackPlugin('styles.css'));
+  config.plugins.push(new MiniCssExtractPlugin({
+    filename: '[name]-[contenthash].css',
+    chunkFilename: '[name]-[contenthash].css'
+  }));
 
   // ---------------------------------------------------------------------------
   // ----- Development Server --------------------------------------------------
