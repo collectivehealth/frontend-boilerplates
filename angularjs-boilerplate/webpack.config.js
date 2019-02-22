@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const CONTEXT = path.resolve(__dirname, 'src');
+const MODULE_NAME = packageJson.name;
 
 module.exports = () => {
   const config = {};
@@ -58,7 +59,7 @@ module.exports = () => {
   // pointing to the template.
   config.module.rules.push({
     test: /\.html$/,
-    use: ['html-loader'],
+    use: [`ngtemplate-loader?requireAngular&relativeTo=${CONTEXT}&prefix=${MODULE_NAME}`, 'html-loader'],
     exclude: [
       path.resolve(CONTEXT, 'index.html')
     ]
@@ -95,7 +96,7 @@ module.exports = () => {
 
   config.plugins = [];
 
-   // Configure source map plugin.
+  // Configure source map plugin.
   config.plugins.push(new webpack.SourceMapDevToolPlugin({
     filename: '[file].map'
   }));

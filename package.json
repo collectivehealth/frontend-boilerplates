@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint .",
     "precommit": "npm run lint"
-  },  
+  },
   "devDependencies": {
     "eslint": "3.x",
     "eslint-config-recommended": "1.5.x",

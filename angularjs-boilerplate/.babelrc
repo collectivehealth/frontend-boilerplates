@@ -1,0 +1,4 @@
+{
+  "plugins": ["angularjs-annotate", "@babel/plugin-transform-runtime"],
+  "presets": ["@babel/preset-env"]
+}
