@@ -2,7 +2,7 @@
 
 This repo contains a collection of basic boilerplate apps in various modern frontend frameworks to be used during Frontend Engineer interviews
 
-There are four boilerplates:
+There are five boilerplates:
 * Vanilla JS (with jQuery)
 * AngularJS
 * Angular
