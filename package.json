@@ -6,20 +6,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/collectivehealth/frontend-boilerplates.git"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "precommit": "npm run lint"
-  },
-  "devDependencies": {
-    "eslint": "3.x",
-    "eslint-config-recommended": "1.5.x",
-    "eslint-config-standard": "10.x",
-    "eslint-plugin-import": "2.x",
-    "eslint-plugin-node": "4.x",
-    "eslint-plugin-promise": "3.x",
-    "eslint-plugin-react": "7.x",
-    "eslint-plugin-standard": "3.x",
-    "husky": "0.13.x"
   }
 }

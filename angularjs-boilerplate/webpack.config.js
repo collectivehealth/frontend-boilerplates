@@ -104,7 +104,7 @@ module.exports = () => {
   // Responsible for managing index.html and injecting references to bundles.
   config.plugins.push(new HtmlWebpackPlugin({
     template: path.resolve(CONTEXT, 'index.html'),
-    chunksSortMode: 'dependency'
+    chunksSortMode: 'auto'
   }));
 
   config.plugins.push(new MiniCssExtractPlugin({
